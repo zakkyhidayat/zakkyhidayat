@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zakky Hidayat</title>
+  <meta name="description" content="Side-project dan catatan dari seorang perencana.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@700;900&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top">
+      <span class="mark"><i class="dot"></i>MZH</span>
+      <button id="theme-toggle" class="icon-btn" aria-label="Ganti tema">
+        <svg class="sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </nav>
+
+    <header class="hero">
+      <p class="eyebrow">PNS · Perencana · Side-project</p>
+      <h1>Mochamad<br>Zakky Hidayat</h1>
+      <p class="lead">PNS Perencana. Di waktu luang, saya membuat aplikasi kecil untuk masalah sehari-hari, dibantu AI.</p>
+      <p class="links">
+        <a href="https://github.com/zakkyhidayat">GitHub</a>
+        <a href="https://www.linkedin.com/in/mochamad-zakky-hidayat-995593264/">LinkedIn</a>
+        <a href="#cv">CV</a>
+        <a href="mailto:zakkyhidayat@gmail.com">Email</a>
+      </p>
+    </header>
+
+    <section>
+      <h2>Side-project</h2>
+      <ul id="projects" class="projects"></ul>
+    </section>
+
+    <section id="cv" class="cv">
+      <div class="cv-head">
+        <h2>CV / Resume</h2>
+        <a class="pill" href="cv.pdf" download>Unduh CV (PDF) ↓</a>
+      </div>
+
+      <div class="cv-card cv-summary">
+        <p class="cv-role">Government Development Planner · Analytical Writer</p>
+        <p>Government planning analyst with 4+ years in planning, monitoring, and evaluation within Indonesia's provincial development system. Works across the full planning cycle, from data collection and program formulation to performance monitoring and formal evaluative reporting.</p>
+      </div>
+
+      <div class="cv-grid">
+        <div class="cv-card cv-wide">
+          <h4>Pengalaman</h4>
+          <ol class="timeline">
+            <li>
+              <span class="when">Mar 2022 – Sekarang</span>
+              <strong>Junior Planning Analyst (Perencana Ahli Pertama)</strong>
+              <em>West Java Provincial Health Office</em>
+              <ul>
+                <li>Formulate planning documents for provincial public health programs across 27 cities and regencies.</li>
+                <li>Synthesize datasets for evidence-based planning (Renja, RPJMD).</li>
+                <li>Monitor programs and produce evaluative reports (LKIP, e-Monev).</li>
+              </ul>
+            </li>
+            <li>
+              <span class="when">Apr 2021 – Feb 2022</span>
+              <strong>Search Engine Ads Analyst</strong>
+              <em>KKBC Japan · Remote</em>
+              <ul>
+                <li>Managed paid search campaigns for education and B2B clients in Japan.</li>
+                <li>Produced weekly and monthly decision-ready performance reports.</li>
+              </ul>
+            </li>
+            <li>
+              <span class="when">Jan 2019 – Mar 2021</span>
+              <strong>Procurement Document Administrator</strong>
+              <em>UPTD Pengelolaan dan Pelayanan Perumahan Jawa Barat</em>
+              <ul>
+                <li>Managed procurement documentation and asset inventory under government regulations.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="cv-card">
+          <h4>Keahlian</h4>
+          <div class="tags">
+            <span>Development planning</span><span>Monitoring &amp; evaluation</span><span>e-Monev</span>
+            <span>Cross-sector coordination</span><span>Policy briefs</span><span>Research reports</span>
+            <span>Data storytelling</span><span>AI-assisted research</span><span>Islamic finance</span>
+          </div>
+        </div>
+
+        <div class="cv-card">
+          <h4>Pendidikan</h4>
+          <p><strong>S1 Manajemen</strong><br><span class="muted">Universitas Widyatama · 2017</span></p>
+          <h4 class="mt">Bahasa</h4>
+          <p class="muted">Indonesia (native) · English (professional working)</p>
+        </div>
+
+        <div class="cv-card cv-wide">
+          <h4>Pelatihan &amp; Sertifikasi</h4>
+          <ul class="certs">
+            <li><span class="when">2025</span>Design Thinking — BPSDM Provinsi Jawa Barat</li>
+            <li><span class="when">2025</span>Leadership &amp; Personal Development — BPSDM Provinsi Jawa Barat</li>
+            <li><span class="when">2024</span>Strategic Plan Evaluation &amp; e-Monev Reporting — Bappeda Provinsi Jawa Barat</li>
+            <li><span class="when">2023</span>Health Development Plan M&amp;E — LPEM FEB Universitas Indonesia</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="note">
+      <h2>Tentang project ini</h2>
+      <p>Semua project dibuat sebagai hobi, dengan kode yang ditulis bersama AI. Peran saya: ide, kebutuhan, pengujian, dan keputusan akhir.</p>
+    </section>
+
+    <footer><span>© <span id="year"></span> Mochamad Zakky Hidayat</span><span>Dibuat dengan AI</span></footer>
+  </div>
+  <script src="assets/js/projects.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
