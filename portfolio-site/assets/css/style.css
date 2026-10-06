@@ -130,11 +130,6 @@ footer {
 /* CV */
 .cv-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
 .cv-head h2 { margin-bottom: 0; }
-.pill {
-  font-family: "Space Mono", monospace; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em;
-  padding: 10px 18px; border-radius: 999px; background: var(--red); color: #fff;
-}
-.pill:hover { filter: brightness(1.1); }
 .cv-card { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 22px; }
 .cv-summary { margin-bottom: 12px; }
 .cv-summary p:last-child { color: var(--muted); max-width: 75ch; }
