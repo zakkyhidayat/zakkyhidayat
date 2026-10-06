@@ -7,7 +7,7 @@ const PROJECTS = [
     icon: "assets/img/projects/baca-pdf-icon.png",
     platform: "Windows 11",
     version: "v1.0.0",
-    why: "",  // one line: why you built it
+    why: "Built because I wanted a lightweight PDF reader that looks and feels native on Windows 11.",
     tags: ["App", "Documents"],
     repo: "https://github.com/zakkyhidayat/baca-pdf",
     download: "https://github.com/zakkyhidayat/baca-pdf/releases",
@@ -17,9 +17,9 @@ const PROJECTS = [
     summary: "West Java health profile data, summarized in an easy-to-read form.",
     image: "assets/img/projects/profil-kesehatan-jabar.jpg",
     platform: "Web",
-    why: "",
+    why: "Built as a ready-to-use base for planning documents, reports, and situation analysis, with maps and processed data tables already in place.",
     tags: ["Data", "Planning"],
-    repo: "https://github.com/zakkyhidayat/profil-kesehatan-jabar",
+    repo: "",  // private repo
     live: "https://profil-kesehatan-jabar.vercel.app/",
   },
 ];
