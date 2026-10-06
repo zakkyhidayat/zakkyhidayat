@@ -11,9 +11,9 @@ const PROJECTS = [
   {
     title: "Profil Kesehatan Jabar",
     summary: "Ringkasan data profil kesehatan Jawa Barat dalam bentuk yang mudah dibaca.",
-    image: "",  // contoh: "assets/img/projects/nama.png"
+    image: "assets/img/projects/profil-kesehatan-jabar.jpg",  // contoh: "assets/img/projects/nama.png"
     tags: ["Data", "Perencanaan"],
     repo: "https://github.com/zakkyhidayat/profil-kesehatan-jabar",
-    demo: "",
+    demo: "https://profil-kesehatan-jabar.vercel.app/",
   },
 ];
