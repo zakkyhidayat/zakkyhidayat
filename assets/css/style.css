@@ -108,6 +108,9 @@ h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -.01em; }
 .project-links a:hover { color: var(--red); }
 .app-icon { width: 28px; height: 28px; vertical-align: -6px; margin-right: 10px; }
 .project p { margin-top: 6px; color: var(--muted); }
+.project .meta { font-family: "Space Mono", monospace; font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--red); margin-top: 4px; }
+.project .meta:empty { display: none; }
+.project .why { font-style: italic; }
 .tags { margin-top: auto; padding-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
 .tags span {
   font-size: .68rem; text-transform: uppercase; letter-spacing: .08em;
@@ -120,6 +123,8 @@ h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -.01em; }
   border-radius: 24px; padding: 22px;
 }
 .note p { color: var(--muted); }
+.now-list { color: var(--muted); padding-left: 18px; }
+.now-list li + li { margin-top: 4px; }
 
 footer {
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;

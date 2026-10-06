@@ -16,11 +16,18 @@ PROJECTS.forEach((p, i) => {
     <div class="body">
       <div class="project-head"><span class="idx">${num}</span><div class="project-links">${links}</div></div>
       <h3>${p.icon ? `<img class="app-icon" src="${p.icon}" alt="" width="28" height="28">` : ""}${p.title}</h3>
+      <p class="meta">${[p.platform, p.version].filter(Boolean).join(" · ")}</p>
       <p>${p.summary}</p>
+      ${p.why ? `<p class="why">${p.why}</p>` : ""}
       <div class="tags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
     </div>`;
   list.appendChild(li);
 });
+
+if (NOW.length) {
+  document.getElementById("now-list").innerHTML = NOW.map(n => `<li>${n}</li>`).join("");
+  document.getElementById("now").hidden = false;
+}
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
