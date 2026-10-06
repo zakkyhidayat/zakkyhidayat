@@ -106,6 +106,7 @@ h2::before { content: ""; width: 6px; height: 6px; border-radius: 50%; backgroun
 h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -.01em; }
 .project-links { display: flex; gap: 14px; font-size: .75rem; letter-spacing: .08em; }
 .project-links a:hover { color: var(--red); }
+.app-icon { width: 28px; height: 28px; vertical-align: -6px; margin-right: 10px; }
 .project p { margin-top: 6px; color: var(--muted); }
 .tags { margin-top: auto; padding-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
 .tags span {

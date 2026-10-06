@@ -14,7 +14,7 @@ PROJECTS.forEach((p, i) => {
     <div class="media">${media}</div>
     <div class="body">
       <div class="project-head"><span class="idx">${num}</span><div class="project-links">${links}</div></div>
-      <h3>${p.title}</h3>
+      <h3>${p.icon ? `<img class="app-icon" src="${p.icon}" alt="" width="28" height="28">` : ""}${p.title}</h3>
       <p>${p.summary}</p>
       <div class="tags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
     </div>`;

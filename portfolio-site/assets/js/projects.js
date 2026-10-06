@@ -3,7 +3,8 @@ const PROJECTS = [
   {
     title: "Baca PDF",
     summary: "Aplikasi pembaca PDF yang ringan dan nyaman dipakai.",
-    image: "",  // contoh: "assets/img/projects/nama.png"
+    image: "assets/img/projects/baca-pdf.jpg",
+    icon: "assets/img/projects/baca-pdf-icon.png",  // opsional
     tags: ["Aplikasi", "Dokumen"],
     repo: "https://github.com/zakkyhidayat/baca-pdf",
     demo: "",
