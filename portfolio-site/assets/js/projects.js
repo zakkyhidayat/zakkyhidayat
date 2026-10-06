@@ -1,20 +1,20 @@
-// Edit daftar project di sini. Kosongkan demo kalau tidak ada.
+// Edit the project list here. Leave live/download empty if not available.
 const PROJECTS = [
   {
     title: "Baca PDF",
-    summary: "Aplikasi pembaca PDF yang ringan dan nyaman dipakai untuk platform Windows 11.",
+    summary: "A lightweight, comfortable PDF reader for Windows 11.",
     image: "assets/img/projects/baca-pdf.jpg",
-    icon: "assets/img/projects/baca-pdf-icon.png",  // opsional
-    tags: ["Aplikasi", "Dokumen"],
+    icon: "assets/img/projects/baca-pdf-icon.png",
+    tags: ["App", "Documents"],
     repo: "https://github.com/zakkyhidayat/baca-pdf",
-    demo: "",
+    download: "https://github.com/zakkyhidayat/baca-pdf/releases",
   },
   {
     title: "Profil Kesehatan Jabar",
-    summary: "Ringkasan data profil kesehatan Jawa Barat dalam bentuk yang mudah dibaca.",
-    image: "assets/img/projects/profil-kesehatan-jabar.jpg",  // contoh: "assets/img/projects/nama.png"
-    tags: ["Data", "Perencanaan"],
+    summary: "West Java health profile data, summarized in an easy-to-read form.",
+    image: "assets/img/projects/profil-kesehatan-jabar.jpg",
+    tags: ["Data", "Planning"],
     repo: "https://github.com/zakkyhidayat/profil-kesehatan-jabar",
-    demo: "https://profil-kesehatan-jabar.vercel.app/",
+    live: "https://profil-kesehatan-jabar.vercel.app/",
   },
 ];

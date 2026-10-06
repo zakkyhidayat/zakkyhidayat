@@ -4,12 +4,13 @@ PROJECTS.forEach((p, i) => {
   li.className = "project";
   const num = String(i + 1).padStart(2, "0");
   const links = [
-    p.demo && `<a href="${p.demo}">DEMO ↗</a>`,
-    p.repo && `<a href="${p.repo}">KODE ↗</a>`,
+    p.live && `<a href="${p.live}">LIVE ↗</a>`,
+    p.download && `<a href="${p.download}">DOWNLOAD ↗</a>`,
+    p.repo && `<a href="${p.repo}">CODE ↗</a>`,
   ].filter(Boolean).join("");
   const media = p.image
-    ? `<img src="${p.image}" alt="Tampilan ${p.title}" loading="lazy">`
-    : `<div class="placeholder" aria-hidden="true"><span>${num}</span><small>GAMBAR BELUM ADA</small></div>`;
+    ? `<img src="${p.image}" alt="Screenshot of ${p.title}" loading="lazy">`
+    : `<div class="placeholder" aria-hidden="true"><span>${num}</span><small>NO IMAGE YET</small></div>`;
   li.innerHTML = `
     <div class="media">${media}</div>
     <div class="body">
