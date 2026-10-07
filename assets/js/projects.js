@@ -15,7 +15,8 @@ const PROJECTS = [
   {
     title: "Profil Kesehatan Jabar",
     summary: "West Java health profile data, summarized in an easy-to-read form.",
-    image: "assets/img/projects/profil-kesehatan-jabar.jpg",
+    icon: "assets/img/projects/profil-kesehatan-icon.svg",
+    tint: "#2a78d6",
     platform: "Web",
     why: "Built as a ready-to-use base for planning documents, reports, and situation analysis, with maps and processed data tables already in place.",
     tags: ["Data", "Planning"],
@@ -26,6 +27,7 @@ const PROJECTS = [
     title: "Quran M3E",
     summary: "A Material 3 Expressive take on Quran for Android, the open-source Quran.com reader. No analytics, and it installs next to the official app.",
     icon: "assets/img/projects/quran-m3e-icon.png",
+    tint: "#1b6b4a",
     platform: "Android 7.0+",
     version: "v3.6.4-m3e.1",
     why: "Built because I wanted a simple, modern-looking app that gets straight to reading the Quran, with audio recitation planned as an extra.",
