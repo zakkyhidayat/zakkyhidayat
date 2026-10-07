@@ -51,3 +51,105 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   root.dataset.theme = dark ? "light" : "dark";
   try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
 });
+
+// ---------- motion layer ----------
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// 1. Reveal on scroll (cards stagger)
+const revealTargets = [
+  ...document.querySelectorAll(".block .label, .cv-summary, .sub, .rows > li, .cv-grid > div, .note p"),
+  ...document.querySelectorAll(".project"),
+];
+document.querySelectorAll(".project").forEach((el, i) => el.style.setProperty("--d", `${(i % 3) * 90}ms`));
+revealTargets.forEach(el => el.classList.add("reveal"));
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); revealObs.unobserve(e.target); } });
+}, { rootMargin: "0px 0px -8% 0px" });
+revealTargets.forEach(el => revealObs.observe(el));
+
+// 2. Cursor spotlight on cards
+document.querySelectorAll(".project").forEach(card => {
+  card.addEventListener("pointermove", e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty("--x", `${e.clientX - r.left}px`);
+    card.style.setProperty("--y", `${e.clientY - r.top}px`);
+  });
+});
+
+// 3. Type the name once
+const nameEl = document.getElementById("name");
+if (!reduce && nameEl) {
+  const full = nameEl.textContent;
+  const h1 = nameEl.parentElement;
+  h1.style.minHeight = `${h1.offsetHeight}px`;
+  nameEl.textContent = "";
+  h1.classList.add("typing");
+  let i = 0;
+  const step = () => {
+    nameEl.textContent = full.slice(0, ++i);
+    if (i < full.length) setTimeout(step, 38);
+    else { h1.classList.remove("typing"); h1.style.minHeight = ""; }
+  };
+  setTimeout(step, 250);
+}
+
+// 4. Current section in nav + progress bar
+const nav = document.querySelector(".top");
+const where = document.getElementById("where");
+const bar = document.getElementById("progress");
+const sections = [...document.querySelectorAll("section.block")].filter(s => !s.hidden);
+const sectionObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const label = e.target.querySelector(".label");
+    const num = label.querySelector("span").textContent;
+    const text = label.textContent.replace(num, "").trim();
+    where.innerHTML = `<b>${num}</b>${text}`;
+    where.classList.add("on");
+  });
+}, { rootMargin: "-45% 0px -50% 0px" });
+sections.forEach(s => sectionObs.observe(s));
+
+// 5. Parallax on screenshots
+const shots = [...document.querySelectorAll(".media:not(.icon-only) img")];
+
+let ticking = false;
+const onScroll = () => {
+  const y = scrollY;
+  const max = document.documentElement.scrollHeight - innerHeight;
+  bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+  nav.classList.toggle("scrolled", y > 8);
+  if (y < innerHeight * 0.5) where.classList.remove("on");
+  if (!reduce) {
+    shots.forEach(img => {
+      const r = img.parentElement.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > innerHeight) return;
+      const p = (r.top + r.height / 2 - innerHeight / 2) / innerHeight; // -0.5..0.5
+      img.style.setProperty("--py", `${(p * -16).toFixed(1)}px`);
+    });
+  }
+  ticking = false;
+};
+addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+addEventListener("resize", onScroll);
+onScroll();
+
+// 6. Reading focus on resume rows: only the row nearest the middle of the screen
+const rowLists = [...document.querySelectorAll(".rows")];
+const focusRows = () => {
+  const mid = innerHeight / 2;
+  rowLists.forEach(list => {
+    const lr = list.getBoundingClientRect();
+    const inBand = lr.top < mid && lr.bottom > mid;
+    let best = null, bestD = Infinity;
+    if (inBand) [...list.children].forEach(li => {
+      const r = li.getBoundingClientRect();
+      const d = Math.abs(r.top + r.height / 2 - mid);
+      if (d < bestD) { bestD = d; best = li; }
+    });
+    [...list.children].forEach(li => li.classList.toggle("active", li === best));
+    list.classList.toggle("reading", !!best);
+  });
+};
+addEventListener("scroll", () => requestAnimationFrame(focusRows), { passive: true });
+focusRows();
