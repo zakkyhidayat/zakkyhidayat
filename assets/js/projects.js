@@ -2,7 +2,7 @@
 const PROJECTS = [
   {
     title: "Baca PDF",
-    summary: "A lightweight, comfortable PDF reader for Windows 11.",
+    summary: "Tabbed PDF reader with favorites, recent files, and dark mode.",
     icon: "assets/img/projects/baca-pdf-icon.png",
     tint: "#c62828",  // optional background tint for icon-only cards
     platform: "Windows 11",
@@ -28,7 +28,7 @@ const PROJECTS = [
     icon: "assets/img/projects/quran-m3e-icon.png",
     platform: "Android 7.0+",
     version: "v3.6.4-m3e.1",
-    why: "",
+    why: "Built because I wanted a simple, modern-looking app that gets straight to reading the Quran, with audio recitation planned as an extra.",
     tags: ["App", "Fork", "Material 3"],
     repo: "https://github.com/zakkyhidayat/quran_android_m3e",
     download: "https://github.com/zakkyhidayat/quran_android_m3e/releases",
@@ -36,4 +36,4 @@ const PROJECTS = [
 ];
 
 // "Now" section: what you are currently building. Leave empty to hide it.
-const NOW = [];
+const NOW = ["All three projects below are in active development."];
