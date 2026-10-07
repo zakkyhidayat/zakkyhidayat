@@ -84,10 +84,9 @@ if (!reduce && nameEl) {
   setTimeout(step, 250);
 }
 
-// 3. Current section in nav + scroll indicator
+// 3. Current section in nav
 const nav = document.querySelector(".top");
 const where = document.getElementById("where");
-const bar = document.getElementById("progress");
 const sections = [...document.querySelectorAll("section.block")].filter(s => !s.hidden);
 const sectionObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
@@ -104,9 +103,6 @@ sections.forEach(s => sectionObs.observe(s));
 let ticking = false;
 const onScroll = () => {
   const y = scrollY;
-  const max = document.documentElement.scrollHeight - innerHeight;
-  bar.style.transform = `scaleY(${max > 0 ? y / max : 0})`;
-  bar.parentElement.classList.toggle("on", y > 8);
   nav.classList.toggle("scrolled", y > 8);
   if (y < innerHeight * 0.5) where.classList.remove("on");
   ticking = false;
