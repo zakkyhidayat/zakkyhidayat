@@ -7,6 +7,7 @@
   --accent: #0f7a5f;
   --accent-soft: #e3f1ec;
   --shadow: 0 1px 2px rgba(23, 24, 26, .04), 0 8px 24px -12px rgba(23, 24, 26, .12);
+  --tint-amt: 6%;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
@@ -14,6 +15,7 @@
     --bg: #0e0f10; --surface: #16181a; --text: #ecece8; --muted: #9a9da2;
     --line: #26292c; --accent: #4cc9a4; --accent-soft: #15302a;
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.6);
+    --tint-amt: 4%;
     color-scheme: dark;
   }
 }
@@ -21,6 +23,7 @@
   --bg: #0e0f10; --surface: #16181a; --text: #ecece8; --muted: #9a9da2;
   --line: #26292c; --accent: #4cc9a4; --accent-soft: #15302a;
   --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.6);
+  --tint-amt: 4%;
   color-scheme: dark;
 }
 
@@ -110,7 +113,7 @@ h1 {
 .media { aspect-ratio: 16 / 10; border-bottom: 1px solid var(--line); background: var(--bg); overflow: hidden; }
 .media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .media.icon-only { display: grid; place-items: center; background: var(--accent-soft); }
-.media.icon-only[style*="--tint"] { background: color-mix(in srgb, var(--tint) 6%, color-mix(in srgb, var(--muted) 6%, var(--bg))); }
+.media.icon-only[style*="--tint"] { background: color-mix(in srgb, var(--tint) var(--tint-amt), color-mix(in srgb, var(--muted) 6%, var(--bg))); }
 .media.icon-only img { width: 96px; height: 96px; object-fit: contain; border-radius: 22px; box-shadow: var(--shadow); }
 .placeholder { height: 100%; display: grid; place-items: center; color: var(--muted); font-size: .8rem; }
 
