@@ -115,6 +115,14 @@ h1 {
 .media.icon-only { display: grid; place-items: center; background: var(--accent-soft); }
 .media.icon-only[style*="--tint"] { background: color-mix(in srgb, var(--tint) var(--tint-amt), color-mix(in srgb, var(--muted) 6%, var(--bg))); }
 .media.icon-only img { width: 96px; height: 96px; object-fit: contain; border-radius: 22px; box-shadow: var(--shadow); }
+/* phones: icon cards become compact rows (icon left, text right) */
+@media (max-width: 600px) {
+  .project.icon-card { display: grid; grid-template-columns: 56px 1fr; column-gap: 14px; padding: 20px 20px 22px; }
+  .project.icon-card .media { aspect-ratio: auto; border: 0; background: none; overflow: visible; align-self: start; display: block; padding-top: 2px; }
+  .project.icon-card .media img { width: 56px; height: 56px; border-radius: 14px; box-shadow: var(--shadow); }
+  .project.icon-card .body { padding: 0; }
+  .project.icon-card h3 { margin-top: 4px; }
+}
 .placeholder { height: 100%; display: grid; place-items: center; color: var(--muted); font-size: .8rem; }
 
 .body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }

@@ -1,7 +1,7 @@
 const list = document.getElementById("projects");
 PROJECTS.forEach((p, i) => {
   const li = document.createElement("li");
-  li.className = "project";
+  li.className = p.image ? "project" : "project icon-card";
   const num = String(i + 1).padStart(2, "0");
   const links = [
     p.live && `<a href="${p.live}">Open live ↗</a>`,
