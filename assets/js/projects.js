@@ -38,4 +38,4 @@ const PROJECTS = [
 ];
 
 // "Now" section: what you are currently building. Leave empty to hide it.
-const NOW = ["All three projects below are in active development."];
+const NOW = [];
