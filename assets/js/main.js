@@ -67,16 +67,7 @@ const revealObs = new IntersectionObserver(entries => {
 }, { rootMargin: "0px 0px -8% 0px" });
 revealTargets.forEach(el => revealObs.observe(el));
 
-// 2. Cursor spotlight on cards
-document.querySelectorAll(".project").forEach(card => {
-  card.addEventListener("pointermove", e => {
-    const r = card.getBoundingClientRect();
-    card.style.setProperty("--x", `${e.clientX - r.left}px`);
-    card.style.setProperty("--y", `${e.clientY - r.top}px`);
-  });
-});
-
-// 3. Type the name once
+// 2. Type the name once
 const nameEl = document.getElementById("name");
 if (!reduce && nameEl) {
   const full = nameEl.textContent;
@@ -93,7 +84,7 @@ if (!reduce && nameEl) {
   setTimeout(step, 250);
 }
 
-// 4. Current section in nav + progress bar
+// 3. Current section in nav + scroll indicator
 const nav = document.querySelector(".top");
 const where = document.getElementById("where");
 const bar = document.getElementById("progress");
@@ -110,31 +101,21 @@ const sectionObs = new IntersectionObserver(entries => {
 }, { rootMargin: "-45% 0px -50% 0px" });
 sections.forEach(s => sectionObs.observe(s));
 
-// 5. Parallax on screenshots
-const shots = [...document.querySelectorAll(".media:not(.icon-only) img")];
-
 let ticking = false;
 const onScroll = () => {
   const y = scrollY;
   const max = document.documentElement.scrollHeight - innerHeight;
-  bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+  bar.style.transform = `scaleY(${max > 0 ? y / max : 0})`;
+  bar.parentElement.classList.toggle("on", y > 8);
   nav.classList.toggle("scrolled", y > 8);
   if (y < innerHeight * 0.5) where.classList.remove("on");
-  if (!reduce) {
-    shots.forEach(img => {
-      const r = img.parentElement.getBoundingClientRect();
-      if (r.bottom < 0 || r.top > innerHeight) return;
-      const p = (r.top + r.height / 2 - innerHeight / 2) / innerHeight; // -0.5..0.5
-      img.style.setProperty("--py", `${(p * -16).toFixed(1)}px`);
-    });
-  }
   ticking = false;
 };
 addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
 addEventListener("resize", onScroll);
 onScroll();
 
-// 6. Reading focus on resume rows: only the row nearest the middle of the screen
+// 4. Reading focus on resume rows: only the row nearest the middle of the screen
 const rowLists = [...document.querySelectorAll(".rows")];
 const focusRows = () => {
   const mid = innerHeight / 2;

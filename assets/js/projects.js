@@ -3,7 +3,6 @@ const PROJECTS = [
   {
     title: "Baca PDF",
     summary: "A lightweight, comfortable PDF reader for Windows 11.",
-    image: "assets/img/projects/baca-pdf.jpg",
     icon: "assets/img/projects/baca-pdf-icon.png",
     platform: "Windows 11",
     version: "v1.0.0",
