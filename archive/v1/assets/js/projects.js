@@ -22,17 +22,6 @@ const PROJECTS = [
     repo: "",  // private repo
     live: "https://profil-kesehatan-jabar.vercel.app/",
   },
-  {
-    title: "Quran M3E",
-    summary: "A Material 3 Expressive take on Quran for Android, the open-source Quran.com reader. No analytics, and it installs next to the official app.",
-    icon: "assets/img/projects/quran-m3e-icon.png",
-    platform: "Android 7.0+",
-    version: "v3.6.4-m3e.1",
-    why: "",
-    tags: ["App", "Fork", "Material 3"],
-    repo: "https://github.com/zakkyhidayat/quran_android_m3e",
-    download: "https://github.com/zakkyhidayat/quran_android_m3e/releases",
-  },
 ];
 
 // "Now" section: what you are currently building. Leave empty to hide it.
