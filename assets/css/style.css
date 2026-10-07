@@ -110,6 +110,7 @@ h1 {
 .media { aspect-ratio: 16 / 10; border-bottom: 1px solid var(--line); background: var(--bg); overflow: hidden; }
 .media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .media.icon-only { display: grid; place-items: center; background: var(--accent-soft); }
+.media.icon-only[style*="--tint"] { background: color-mix(in srgb, var(--tint) 6%, color-mix(in srgb, var(--muted) 6%, var(--bg))); }
 .media.icon-only img { width: 96px; height: 96px; object-fit: contain; border-radius: 22px; box-shadow: var(--shadow); }
 .placeholder { height: 100%; display: grid; place-items: center; color: var(--muted); font-size: .8rem; }
 

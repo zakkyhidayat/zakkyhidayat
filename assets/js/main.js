@@ -11,7 +11,7 @@ PROJECTS.forEach((p, i) => {
   const media = p.image
     ? `<div class="media"><img src="${p.image}" alt="Screenshot of ${p.title}" loading="lazy"></div>`
     : p.icon
-      ? `<div class="media icon-only"><img src="${p.icon}" alt="${p.title} icon" loading="lazy"></div>`
+      ? `<div class="media icon-only"${p.tint ? ` style="--tint:${p.tint}"` : ""}><img src="${p.icon}" alt="${p.title} icon" loading="lazy"></div>`
       : `<div class="media"><div class="placeholder">No image yet</div></div>`;
   const titleIcon = p.icon && p.image ? `<img class="app-icon" src="${p.icon}" alt="" width="26" height="26">` : "";
   li.innerHTML = `

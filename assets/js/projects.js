@@ -4,6 +4,7 @@ const PROJECTS = [
     title: "Baca PDF",
     summary: "A lightweight, comfortable PDF reader for Windows 11.",
     icon: "assets/img/projects/baca-pdf-icon.png",
+    tint: "#c62828",  // optional background tint for icon-only cards
     platform: "Windows 11",
     version: "v1.0.0",
     why: "Built because I wanted a lightweight PDF reader that looks and feels native on Windows 11.",
